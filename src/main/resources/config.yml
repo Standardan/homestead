@@ -1,0 +1,10 @@
+# Homestead configuration.
+
+# Default number of homes a player may set.
+# Grant permission "homestead.homes.<number>" (e.g. homestead.homes.10) to raise
+# it for a rank, or "homestead.homes.unlimited" for no cap.
+default-home-limit: 3
+
+# Seconds a player must wait between teleports. 0 disables the cooldown.
+# Players with "homestead.cooldown.bypass" are never delayed.
+teleport-cooldown-seconds: 3

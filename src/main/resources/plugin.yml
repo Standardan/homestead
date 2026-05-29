@@ -1,0 +1,36 @@
+name: Homestead
+version: '${project.version}'
+main: io.github.standardan.homestead.HomesteadPlugin
+api-version: '1.21'
+description: Persistent player homes with limits, cooldowns, and tab completion.
+author: Standardan
+
+# Paper's runtime library loader fetches these from Maven Central at startup,
+# so we don't have to bundle (shade) them into our jar.
+libraries:
+  - org.xerial:sqlite-jdbc:3.46.1.3
+
+commands:
+  home:
+    description: Teleport to one of your homes.
+    usage: /home [name]
+  sethome:
+    description: Set a home at your current location.
+    usage: /sethome [name]
+  delhome:
+    description: Delete one of your homes.
+    usage: /delhome <name>
+  homes:
+    description: List your homes.
+    usage: /homes
+
+permissions:
+  homestead.use:
+    description: Use Homestead's home commands.
+    default: true
+  homestead.homes.unlimited:
+    description: Bypass the configured home limit.
+    default: op
+  homestead.cooldown.bypass:
+    description: Bypass the teleport cooldown.
+    default: op
